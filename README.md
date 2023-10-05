@@ -1,5 +1,14 @@
-Configuracion de entorno en docker: 
+## Pasos para empezar a colaborar
 
+1. Asignarse un issue
+2. Crear una rama desde `main`, con nombre `(issueNr_nombre_de_rama)`
+3. Hacer push de cambios a esa rama. Una vez finalizada la funcionalidad, asignar la etiqueta `ready-for-review`
+4. El reviewer indicará si se deben hacer cambios (quitando la etiqueta) o no
+5. Una vez finalizados los cambios, el reviewer realizará merge a la rama `main`
+
+IMPORTANTE: los únicos commits a la rama `main` deben ser cambios al README
+
+## Para iniciar la app
 
 1. En el directorio que contiene al archivo docker-compose.yml, correr
    ```
