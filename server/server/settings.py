@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',  # Taken from https://www.django-rest-framework.org/
+    'products',  # Required for products.models to create migrations
 ]
 
 MIDDLEWARE = [
