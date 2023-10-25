@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': DB_NAME,
         'USER': DB_USR,
         'PASSWORD': DB_PWD,
-        'PORT': DB_PORT_CONTAINER,  # Port as seen from inside the container
+        'PORT': DB_PORT_CONTAINER,  # Port as seen from inside the container network
         'HOST': DB_HOST
     }
 }

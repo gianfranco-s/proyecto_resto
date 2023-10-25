@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - db
+      - database
     environment:
       - DB_NAME=${DB_NAME}
       - DB_USR=${DB_USR}
@@ -18,7 +18,7 @@ services:
       - DB_ROOT_PWD=${DB_ROOT_PWD}
       - DB_PORT_CONTAINER=${DB_PORT_CONTAINER}
 
-  db:
+  database:
     image: mysql:8.1
     container_name: mysql-docker
     restart: always

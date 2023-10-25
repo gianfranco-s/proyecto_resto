@@ -9,12 +9,12 @@ if IS_DEBUG:
     host = 'localhost'
 
 else:
-    host = 'db'  # Use the value defined in docker compose
+    host = 'database'  # Use the value for the db service defined in docker-compose.yml
 
 DB_NAME = getenv('DB_NAME')
 DB_USR = getenv('DB_USR')
 DB_PWD = getenv('DB_PWD')
 DB_ROOT_PWD = getenv('DB_ROOT_PWD')
 DB_PORT_CONTAINER = getenv('DB_PORT_CONTAINER')
-DB_PORT_HOST = getenv('DB_PORT_DOCKER')
+DB_PORT_HOST = getenv('DB_PORT_HOST')
 DB_HOST = host
