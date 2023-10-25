@@ -1,6 +1,7 @@
 version: '20.10.23'
 services:
   backend:
+    container_name: django-docker
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,9 +14,10 @@ services:
 
   db:
     image: mysql:5.7
+    container_name: mysql-docker
     restart: always
     ports:
-      - 33066:3306
+      - ${DB_PORT_HOST}:${DB_PORT_CONTAINER}
     volumes:
       - .dbdata:/var/lib/mysql
     environment:
