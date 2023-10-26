@@ -1,4 +1,4 @@
-version: '20.10.23'
+version: '3.9'
 services:
   backend:
     container_name: django-docker
@@ -11,13 +11,19 @@ services:
       - .:/app
     depends_on:
       - db
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USR=${DB_USR}
+      - DB_PWD=${DB_PWD}
+      - DB_ROOT_PWD=${DB_ROOT_PWD}
+      - DB_PORT_CONTAINER=${DB_PORT_CONTAINER}
 
   db:
-    image: mysql:5.7
+    image: mysql:8.1
     container_name: mysql-docker
     restart: always
     ports:
-      - ${DB_PORT_HOST}:${DB_PORT_CONTAINER}
+      - ${DB_PORT_HOST}:${DB_PORT_CONTAINER}  # host-facing:inside-container
     volumes:
       - .dbdata:/var/lib/mysql
     environment:
