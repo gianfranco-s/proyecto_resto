@@ -12,7 +12,7 @@ IMPORTANTE: los únicos commits a la rama `main` deben ser cambios al README
 
 1. En el directorio que contiene al archivo docker-compose.yml, correr
    ```
-   sudo docker-compose up --build
+   sudo docker-compose --env-file docker.env up --build
    ```
 
 2. Luego, en un navegador, visitar http://127.0.0.1:8000/
