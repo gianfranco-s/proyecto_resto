@@ -15,7 +15,7 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_USR=${DB_USR}
       - DB_PWD=${DB_PWD}
-      - DB_ROOT_PWD=${DB_ROOT_PWD}
+      # - DB_ROOT_PWD=${DB_ROOT_PWD}
       - DB_PORT_CONTAINER=${DB_PORT_CONTAINER}
 
   database:
