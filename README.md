@@ -12,8 +12,20 @@ IMPORTANTE: los únicos commits a la rama `main` deben ser cambios al README
 
 1. En el directorio que contiene al archivo docker-compose.yml, correr
    ```
-   sudo docker-compose --env-file docker.env up --build
+   sudo docker compose --env-file docker.env up --build
    ```
 
 2. Luego, en un navegador, visitar http://127.0.0.1:8000/
    ![image](https://github.com/gianfranco-s/proyecto_resto/assets/69116761/28f9a720-9293-4a90-942a-73eff50eb03d)
+
+
+## Para realizar migraciones
+Es posible realizar migraciones desde la terminal local, o desde docker
+
+* Terminal local: `python manage.py makemigrations`
+* Docker: 
+```
+sudo docker exec django-docker python manage.py makemigrations
+sudo docker exec django-docker python manage.py showmigrations
+sudo docker exec django-docker python manage.py migrate
+```
