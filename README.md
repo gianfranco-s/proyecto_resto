@@ -23,4 +23,9 @@ IMPORTANTE: los únicos commits a la rama `main` deben ser cambios al README
 Es posible realizar migraciones desde la terminal local, o desde docker
 
 * Terminal local: `python manage.py makemigrations`
-* Docker: `sudo docker exec django-docker python manage.py makemigrations` (untested)
+* Docker: 
+```
+sudo docker exec django-docker python manage.py makemigrations
+sudo docker exec django-docker python manage.py showmigrations
+sudo docker exec django-docker python manage.py migrate
+```
