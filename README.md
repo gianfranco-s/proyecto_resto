@@ -14,6 +14,17 @@ IMPORTANTE: los únicos commits a la rama `main` deben ser cambios al README
    ```
    sudo docker compose --env-file docker.env up --build
    ```
+   <details>
+
+   <summary>EN CASO DE ERROR DE CONEXIÓN</summary>  
+
+   `django.db.utils.OperationalError: (2002, "Can't connect to server on 'database' (115)")`  
+   Detener y eliminar los contenedores con  
+   ```
+   docker container stop <mysql-id>
+   docker container prune
+   ```
+   </details>
 
 2. Luego, en un navegador, visitar http://127.0.0.1:8000/
    ![image](https://github.com/gianfranco-s/proyecto_resto/assets/69116761/28f9a720-9293-4a90-942a-73eff50eb03d)
