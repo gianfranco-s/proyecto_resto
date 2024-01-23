@@ -17,13 +17,13 @@ class ProductViewSet(viewsets.ViewSet):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    def retrieve(self, request, pk = None):  # /api/products/<str:id> [GET]
+    def retrieve(self, request, pk = None):  # /api/products/<str:pk> [GET]
         product = Product.objects.get(id=pk)
         serializer = ProductSerializer(product)
         return Response(serializer.data)
 
-    def update(self, request, pk = None):  # /api/products/<str:id> [PUT]
+    def update(self, request, pk = None):  # /api/products/<str:pk> [PUT]
         pass
 
-    def destroy(self, request, pk = None):  # /api/products/<str:id> [DELETE]
+    def destroy(self, request, pk = None):  # /api/products/<str:pk> [DELETE]
         pass
