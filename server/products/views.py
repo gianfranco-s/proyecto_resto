@@ -31,5 +31,6 @@ class ProductViewSet(viewsets.ViewSet):
 
 
     def destroy(self, request, pk = None):  # /api/products/<str:pk> [DELETE]
-        pass
-
+        product = Product.objects.get(id=pk)
+        product.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
