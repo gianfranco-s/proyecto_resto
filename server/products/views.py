@@ -14,5 +14,5 @@ class ProductViewSet(viewsets.ViewSet):
     def update(self, request, pk = None):  # /api/products/<str:id> [PUT]
         pass
 
-    def delete(self, request, pk = None):  # /api/products/<str:id> [DELETE]
+    def destroy(self, request, pk = None):  # /api/products/<str:id> [DELETE]
         pass
