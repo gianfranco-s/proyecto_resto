@@ -6,25 +6,24 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8000:8000
+      - "8000:8000"
     volumes:
       - .:/app
     depends_on:
-      - db
+      - database
     environment:
       - DB_NAME=${DB_NAME}
       - DB_USR=${DB_USR}
       - DB_PWD=${DB_PWD}
-      - DB_ROOT_PWD=${DB_ROOT_PWD}
+      # - DB_ROOT_PWD=${DB_ROOT_PWD}
       - DB_PORT_CONTAINER=${DB_PORT_CONTAINER}
-      - DB_HOST=${DB_HOST}
 
-  db:
+  database:
     image: mysql:8.1
     container_name: mysql-docker
     restart: always
     ports:
-      - ${DB_PORT_HOST}:${DB_PORT_CONTAINER}  # host-facing:inside-container
+      - "${DB_PORT_HOST}:${DB_PORT_CONTAINER}"  # host-facing:inside-container
     volumes:
       - .dbdata:/var/lib/mysql
     environment:

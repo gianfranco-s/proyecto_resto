@@ -1,23 +1,16 @@
-from dotenv import load_dotenv
 from os import getenv
 
-RUN_OUTSIDE_DOCKER = getenv('RUN_OUTSIDE_DOCKER', 'false').lower() in ('1', 'true')  # Set true if outside of docker
+IS_DEBUG = getenv('IS_DEBUG', 'false').lower() in ('1', 'true')  # Is true if outside of docker
 
-
-if RUN_OUTSIDE_DOCKER:
-    load_dotenv('../docker.env')
+if IS_DEBUG:
     host = 'localhost'
-
 else:
-    host = 'database'  # Use the value for the db service defined in docker-compose.yml
+    host = 'db'  # Utiliza el nombre del servicio definido en tu archivo docker-compose.yml
 
-# DB_ROOT_PWD = getenv('DB_ROOT_PWD')
-DB_PORT_CONTAINER = getenv('DB_PORT_CONTAINER') # Port as seen from inside the container network
-
-DB_DATA = {
-    'NAME': getenv('DB_NAME'),
-    'USER': getenv('DB_USR'),
-    'PASSWORD': getenv('DB_PWD'),
-    'PORT': DB_PORT_CONTAINER,
-    'HOST': host
-}
+DB_NAME = getenv('DB_NAME')
+DB_USR = getenv('DB_USR')
+DB_PWD = getenv('DB_PWD')
+DB_ROOT_PWD = getenv('DB_ROOT_PWD')
+DB_PORT_CONTAINER = getenv('DB_PORT_CONTAINER')
+DB_PORT_HOST = getenv('DB_PORT_HOST')
+DB_HOST = host
